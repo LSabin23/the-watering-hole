@@ -9,7 +9,8 @@ const thoughtController = {
 
   // POST (create) new thought
   // /api/thoughts
-  // remember to push created thought's _id to associated user's thoughts array field - by username
+  // create a new Thought then use .findOneAndUpdate() to update the User the newly created Thought belongs to
+  // class activity (18-NoSQL: 05-Mongoose-Populate > server.js: line 52)
 
   // POST (create) new reaction to store in a single thought's reactions array
   // /api/thoughts/:thoughtId/reactions
@@ -22,7 +23,8 @@ const thoughtController = {
 
   // DELETE reaction by pulling it from the thought's *reactions* array by the reaction's reactionId
   // /api/thoughts/:thoughtId/reactions/:reactionId
-  
+  // using .findOneAndUpdate() - because we're *updating* information on a Thought - to remove the reactionId from the reactions list as a 'delete'
+
 }
 
 module.exports = thoughtController
