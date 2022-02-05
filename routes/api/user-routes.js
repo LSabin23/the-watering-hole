@@ -26,6 +26,7 @@ router
   .delete(deleteUser)
 
 // set up POST and DELETE at /api/users/:userId/friends/:friendId
+// these are together because we're just associating an existing user as a friend and NOT creating a new user AND simultaneously associating them with an existing one
 router
   .route('/:userId/friends/:friendId')
   .post(addFriend)

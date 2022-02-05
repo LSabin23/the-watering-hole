@@ -26,6 +26,7 @@ router
   .delete(deleteThought)
 
 // set up POST at /api/thoughts/:thoughtId/reactions
+// this is separate from the DELETE setup so we can create a new reaction AND associate it with a thought (we won't have the reactionId to include in the endpoint because it won't exist yet)
 router
   .route('/:thoughtId/reactions')
   .post(createReaction)
