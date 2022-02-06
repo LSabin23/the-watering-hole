@@ -82,7 +82,8 @@ module.exports = (
 
   let hour;
   // check for 24-hr time
-  if (dateObj.getHours > 12) {
+  // dateObj.getHours() was missing the parentheses
+  if (dateObj.getHours() > 12) {
     hour = Math.floor(dateObj.getHours() / 2);
   } else {
     hour = dateObj.getHours();
