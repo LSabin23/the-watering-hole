@@ -72,7 +72,7 @@ const thoughtController = {
       { _id: params.thoughtId },
       // this pushes the body content to the ReactionSchema through the Thought model
       { $push: { reactions: body } },
-      { new: true }
+      { new: true, runValidators: true }
     )
       .then(dbThoughtData => {
         if (!dbThoughtData) {

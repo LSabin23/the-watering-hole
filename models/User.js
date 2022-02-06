@@ -10,6 +10,7 @@ const UserSchema = new Schema(
     email: {
       type: String,
       unique: true,
+      required: true,
       // Mongoose match validator uses a regex to check that the input *matches* the allowed sequence of characters
       match: [/.+@.+\..+/, 'Please enter a valid e-mail address']
     },

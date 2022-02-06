@@ -77,7 +77,7 @@ const userController = {
   },
 
   // PUT (update) user by id
-  // /api/users/:userId
+  // /api/users/:id
   updateUser ({ params, body }, res) {
     // runValidators: true here makes sure that we don't try to update an existing user with non-permitted data (instead of just validating on creation)
     User.findOneAndUpdate({ _id: params.id }, body, { new: true, runValidators: true })
